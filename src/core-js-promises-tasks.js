@@ -17,10 +17,12 @@
  * 0    => promise that will be fulfilled
  * 1    => promise that will be fulfilled
  */
-function getPromise(/* number */) {
-  throw new Error('Not implemented');
+function getPromise(number) {
+  const errorAlert = 'Number is negative';
+  return number >= 0
+    ? Promise.resolve(number)
+    : Promise.reject(new Error(errorAlert));
 }
-
 /**
  * Returns a promise that will always fulfilled and return a value of success or fail.
  * It returns a promise that is always fulfilled with a string value: 'success' if the original promise was fulfilled,
